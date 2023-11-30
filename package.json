@@ -1,5 +1,5 @@
 {
-  "name": "@anatolia-cms/anatolia-cli",
+  "name": "@anatoliacms/anatolia-cli",
   "version": "0.0.28",
   "description": "",
   "main": "./lib/index.js",
