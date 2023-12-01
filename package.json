@@ -1,10 +1,10 @@
 {
   "name": "@anatoliacms/anatolia-cli",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "",
   "main": "./lib/index.js",
   "bin": {
-    "nccli": "./lib/index.js"
+    "anatolia": "./lib/index.js"
   },
   "scripts": {
     "start": "ts-node src/index.ts",
