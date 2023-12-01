@@ -1,6 +1,7 @@
 {
   "name": "@anatoliacms/anatolia-cli",
-  "version": "0.0.31",
+  "version": "1.0.0",
+  "version-name": "sumerian",
   "description": "",
   "main": "./lib/index.js",
   "bin": {
