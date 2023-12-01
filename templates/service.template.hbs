@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import {{entityName}} from '{{entityFileName}}';
 import {{dtoName}} from '{{dtoFileName}}';
-import AbstractCrudService from 'nest-crud-abstraction/dist/service/AbstractCrudService';
+import AbstractCrudService from '@anatoliacms/anatolia-common/dist/service/AbstractCrudService';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import {{mapperName}} from '{{mapperFileName}}';
-import AbstractMapper from 'nest-crud-abstraction/dist/mapper/AbstractMapper';
+import AbstractMapper from '@anatoliacms/anatolia-common/dist/mapper/AbstractMapper';
 
 @Injectable()
 export class {{serviceName}} extends AbstractCrudService<{{entityName}}, {{dtoName}}> {
