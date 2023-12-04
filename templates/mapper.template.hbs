@@ -1,7 +1,7 @@
 import {{entityName}} from '{{entityFileName}}';
 import {{dtoName}} from '{{dtoFileName}}';
 import { Injectable } from '@nestjs/common';
-import AbstractMapper from 'nest-crud-abstraction/dist/mapper/AbstractMapper';
+import AbstractMapper from '@anatoliacms/anatolia-common/dist/mapper/AbstractMapper';
 
 @Injectable()
 export default class {{mapperName}} extends AbstractMapper<{{entityName}}, {{dtoName}}> {

@@ -6,7 +6,7 @@ import chalk from 'chalk';
 export interface BuildOptions {
     data: any;
     templatePath: string;
-    outDir: string;
+    outDir?: string;
 }
 
 hbs.registerHelper("isNumber", (param) => {

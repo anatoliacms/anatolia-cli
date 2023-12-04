@@ -3,7 +3,7 @@ import chalk from "chalk";
 import {program} from 'commander';
 import fs from 'fs';
 import path from "path";
-import {commands} from "./commands";
+import {appModuleCommand, commands} from "./commands";
 import {updateDefinitions} from "./definitions";
 import {mkdirAsync, writeFileAsync} from "./utils";
 
@@ -17,7 +17,8 @@ async function commandRunner() {
     program
         .option('-n, --name', 'entity name', 'SampleCLIEntity')
         .option('-c, --columns', 'entity columns')
-        .option('-s, --sync', 'sync modules');
+        .option('-i, --init', 'database options')
+        .option('-s, --sync', 'sync modules')
 
     program.parse(process.argv);
     const options = program.opts();
@@ -27,6 +28,14 @@ async function commandRunner() {
 
     // Sync modules
     if (options.sync) {
+        updateDefinitions();
+        return;
+    }
+
+    //Update App Module
+    if (options.init) {
+        const databaseOptions = program.args[0];
+        appModuleCommand(databaseOptions);
         updateDefinitions();
         return;
     }

@@ -2,8 +2,8 @@ import { Controller } from '@nestjs/common';
 import { {{serviceName}} } from '{{serviceFileName}}';
 import {{entityName}} from '{{entityFileName}}';
 import {{dtoName}} from '{{dtoFileName}}';
-import AbstractController from 'nest-crud-abstraction/dist/controller/AbstractController';
-import AbstractCrudService from 'nest-crud-abstraction/dist/service/AbstractCrudService';
+import AbstractController from '@anatoliacms/anatolia-common/dist/controller/AbstractController';
+import AbstractCrudService from '@anatoliacms/anatolia-common/dist/service/AbstractCrudService';
 
 @Controller('/{{controllerPathName}}')
 export class {{entityName}}Controller extends AbstractController<{{entityName}}, {{dtoName}}> {
