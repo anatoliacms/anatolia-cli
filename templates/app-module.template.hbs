@@ -1,0 +1,24 @@
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { imports } from "./module.definition";
+import { TypeOrmModule } from "@nestjs/typeorm";
+
+@Module({
+    imports: [
+        TypeOrmModule.forRoot({
+            {{#if databaseOptions.type}} type: "{{databaseOptions.type}}"{{/if}},
+            {{#if databaseOptions.host}} host: "{{databaseOptions.host}}"{{/if}},
+            {{#if databaseOptions.port}} port: {{databaseOptions.port}}{{/if}},
+            {{#if databaseOptions.username}} username: "{{databaseOptions.username}}"{{/if}},
+            {{#if databaseOptions.password}} password: "{{databaseOptions.password}}"{{/if}},
+            {{#if databaseOptions.database}} database: "{{databaseOptions.database}}"{{/if}},
+            {{#if databaseOptions.autoLoadEntities}} autoLoadEntities: {{databaseOptions.autoLoadEntities}}{{/if}},
+            {{#if databaseOptions.synchronize}} synchronize: {{databaseOptions.synchronize}}{{/if}}
+        }),
+        ...imports
+    ],
+    controllers: [AppController],
+    providers: [AppService],
+})
+export class AppModule {}

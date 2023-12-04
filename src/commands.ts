@@ -1,9 +1,10 @@
-import EntityCommand from "./commands/entity.command";
+import AppModuleCommand from "./commands/app-module.command";
 import ControllerCommand from "./commands/controller.command";
 import DtoCommand from "./commands/dto.command";
-import ServiceCommand from "./commands/service.command";
-import ModuleCommand from "./commands/module.command";
+import EntityCommand from "./commands/entity.command";
 import MapperCommand from "./commands/mapper.command";
+import ModuleCommand from "./commands/module.command";
+import ServiceCommand from "./commands/service.command";
 
 export const commands = (columns: string, className: string, updateDefinitions: Function) => {
     new EntityCommand().builder({
@@ -93,4 +94,16 @@ export const commands = (columns: string, className: string, updateDefinitions: 
         templatePath: "../../templates/mapper.template.hbs",
         outDir: `${className.toLowerCase()}`
     }).execute();
+}
+
+export const appModuleCommand = (databaseOptions: string) => {
+    new AppModuleCommand().builder({
+        data: {
+            className: 'app',
+            databaseOptions: JSON.parse(databaseOptions),
+        },
+        templatePath: "../../templates/app-module.template.hbs",
+        outDir: `./`
+    }).execute((err: any) => {
+    });
 }
